@@ -46,6 +46,8 @@ function playRound(playerChoice, computerChoice) {
 
 function playGame() {
   //Play five rounds of Rock, Paper, Scissors against the computer
+  console.log("======== NEW GAME ========");
+
   for (i = 1; i <= 5; i++) {
     let playerChoice = prompt(
       "Let's play a game of Rock Paper Scissors! Enter your choice below."
@@ -57,7 +59,6 @@ function playGame() {
       break;
     }
 
-    console.log("======== NEW GAME ========");
     console.log(`Round ${i}!`);
     console.log(`You chose ${playerChoice}.`);
     console.log(`Computer chose ${computerChoice}.`);
