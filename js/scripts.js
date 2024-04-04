@@ -1,4 +1,5 @@
 function getComputerChoice() {
+  //Return a random value amongst the options of Rock, Paper, Scissors
   const computerOptions = ["Rock", "Paper", "Scissors"];
   let computerChoice = computerOptions[Math.floor(Math.random() * 3)];
 
@@ -6,6 +7,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
+  //Take a player choice and a computer choice then play a game of Rock Paper Scissors
   let player = playerChoice.toLowerCase();
   let computer = computerChoice.toLowerCase();
   let playerWinner = 0;
@@ -40,4 +42,25 @@ function playRound(playerChoice, computerChoice) {
   }
 
   return winnerMessage;
+}
+
+function playGame() {
+  //Play five rounds of Rock, Paper, Scissors against the computer
+  for (i = 1; i <= 5; i++) {
+    let playerChoice = prompt(
+      "Let's play a game of Rock Paper Scissors! Enter your choice below."
+    );
+    let computerChoice = getComputerChoice();
+
+    //Exit if the player canceled
+    if (playerChoice === null) {
+      break;
+    }
+
+    console.log("======== NEW GAME ========");
+    console.log(`Round ${i}!`);
+    console.log(`You chose ${playerChoice}.`);
+    console.log(`Computer chose ${computerChoice}.`);
+    console.log(playRound(playerChoice, computerChoice));
+  }
 }
