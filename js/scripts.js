@@ -1,3 +1,11 @@
+let playerButtons = [...document.querySelectorAll(".button-player")];
+
+playerButtons.forEach((playerButton) => {
+  playerButton.addEventListener("click", function () {
+    console.log(playRound(playerButton.textContent, getComputerChoice()));
+  });
+});
+
 function getComputerChoice() {
   //Return a random value amongst the options of Rock, Paper, Scissors
   const computerOptions = ["Rock", "Paper", "Scissors"];
