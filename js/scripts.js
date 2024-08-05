@@ -21,6 +21,23 @@ function playRound(playerChoice, computerChoice) {
   let playerWinner = 0;
   let winnerMessage = "";
 
+  let winnerDisplayBoard = document.querySelector(".display-game-result");
+  let playerScoreBoard = document.querySelector(".player-score");
+  let computerScoreBoard = document.querySelector(".cpu-score");
+  let gameOverBoard = document.querySelector(".display-new-game-message");
+
+  let playerScore = +playerScoreBoard.textContent;
+  let computerScore = +computerScoreBoard.textContent;
+
+  if (playerScore >= 5 || computerScore >= 5) {
+    document.querySelector(".display-new-game-message").textContent =
+      "Click 'New Game' to continue";
+    return;
+  }
+
+  let roundDisplayBoard = document.querySelector(".display-round");
+  let roundNumber = +roundDisplayBoard.textContent;
+
   if (player === computer) {
     playerWinner = 2;
   } else if (player === "rock") {
@@ -41,17 +58,25 @@ function playRound(playerChoice, computerChoice) {
 
   if (playerWinner === 1) {
     winnerMessage = `You Win! ${playerChoice} beats ${computerChoice}!`;
+    playerScoreBoard.textContent = playerScore += 1;
   } else if (playerWinner === 0) {
     winnerMessage = `You Lose! ${computerChoice} beats ${playerChoice}!`;
+    computerScoreBoard.textContent = computerScore += 1;
   } else if (playerWinner === 2) {
     winnerMessage = `You Tied! Computer chose ${computerChoice} too!`;
   } else {
     winnerMessage = `${playerChoice} is not a valid option. Try again by choosing 'Rock', 'Paper', or 'Scissors'.`;
   }
 
-  return winnerMessage;
+  //Update the game status
+  winnerDisplayBoard.textContent = winnerMessage;
+  roundDisplayBoard.textContent = roundNumber += 1;
+
+  // return winnerMessage;
 }
 
+/*
+* console logs a 5 round game
 function playGame() {
   //Play five rounds of Rock, Paper, Scissors against the computer
   console.log("======== NEW GAME ========");
@@ -73,3 +98,4 @@ function playGame() {
     console.log(playRound(playerChoice, computerChoice));
   }
 }
+*/
