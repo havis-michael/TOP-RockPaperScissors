@@ -1,9 +1,14 @@
 let playerButtons = [...document.querySelectorAll(".button-player")];
+let newGameButton = document.querySelector(".new-game-button");
 
 playerButtons.forEach((playerButton) => {
   playerButton.addEventListener("click", function () {
-    console.log(playRound(playerButton.textContent, getComputerChoice()));
+    playRound(playerButton.textContent, getComputerChoice());
   });
+});
+
+newGameButton.addEventListener("click", function () {
+  newGame();
 });
 
 function getComputerChoice() {
@@ -73,6 +78,20 @@ function playRound(playerChoice, computerChoice) {
   roundDisplayBoard.textContent = roundNumber += 1;
 
   // return winnerMessage;
+}
+
+function newGame() {
+  let winnerDisplayBoard = document.querySelector(".display-game-result");
+  let playerScoreBoard = document.querySelector(".player-score");
+  let computerScoreBoard = document.querySelector(".cpu-score");
+  let gameOverBoard = document.querySelector(".display-new-game-message");
+  let roundDisplayBoard = document.querySelector(".display-round");
+
+  winnerDisplayBoard.textContent = "";
+  playerScoreBoard.textContent = "";
+  computerScoreBoard.textContent = "";
+  gameOverBoard.textContent = "";
+  roundDisplayBoard.textContent = "";
 }
 
 /*

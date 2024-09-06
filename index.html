@@ -8,29 +8,42 @@
 </head>
 <body>
   <div class="wrapper">
-    <div class="menu-wrapper">
+    <div class="menu-container">
       <div class="menu">
-        <button class="new-game">New Game</button>
+        <button class="new-game-button">New Game</button>
       </div>
     </div>
-    <div class="game-button-wrapper">
-      <div class="button-player button-rock">Rock</div>
-      <div class="button-player button-paper">Paper</div>
-      <div class="button-player button-scissors">Scissors</div>
-    </div>
-    <div class="display-game-round">
-      Round <div class="display-round"></div>
-    </div>
-    <div class="display-game-score">
-      <div class="display-player-score">
-        Player: <div class="player-score"></div>
-    </div>
-      <div class="display-cpu-score">
-        Computer: <div class="cpu-score"></div>
+    <div class="game-status-container">
+      <div class="header">
+        <div class="display-game-round">
+          Round <div class="display-round"></div>
+        </div>
+        <div class="display-game-score">
+          <div class="display-player-score">
+            Player: <div class="player-score"></div>
+        </div>
+          <div class="display-cpu-score">
+            Computer: <div class="cpu-score"></div>
+          </div>
+        </div>
+        <div class="display-new-game-message"></div>
+        <div class="display-game-result"></div>
+  
       </div>
     </div>
-    <div class="display-new-game-message"></div>
-    <div class="display-game-result"></div>
+    <div class="game-button-container">
+      <div class="game-buttons">
+        <div class="button-player-container first-item">
+          <button class="button-player button-rock">Rock</button>
+        </div>
+        <div class="button-player-container">
+          <button class="button-player button-paper">Paper</button>
+        </div>
+        <div class="button-player-container">
+          <button class="button-player button-scissors">Scissors</button>
+        </div>
+      </div>
+    </div>
   </div>
 
 
